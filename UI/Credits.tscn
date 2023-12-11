@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://cs408dam6yuv"]
+
+[ext_resource type="Script" path="res://UI/Credits.gd" id="1_mhbnv"]
+[ext_resource type="FontFile" uid="uid://bgr10ti7ub44u" path="res://Fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_2mpte"]
+
+[sub_resource type="Theme" id="Theme_3vqx7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm7pd"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.905882)
+
+[sub_resource type="Theme" id="Theme_avdhs"]
+default_font = ExtResource("2_2mpte")
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5suxe"]
+bg_color = Color(0.533333, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_7x3gy"]
+font_names = PackedStringArray("Sans-Serif")
+
+[sub_resource type="Theme" id="Theme_royte"]
+default_font = SubResource("SystemFont_7x3gy")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = 67.0
+offset_right = -69.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhbnv")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3vqx7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tm7pd")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+offset_right = 19.0
+offset_bottom = 28.0
+theme = SubResource("Theme_avdhs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5suxe")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = -220.0
+offset_right = 452.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_royte")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "This work is based on \"Low poly turtle\" (https://sketchfab.com/3d-models/low-poly-turtle-180168bf6f594ddcada436f554feb173) by clydehelder (https://sketchfab.com/clydehelder) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+Background Music: Chiptune Grooving by K00sin (https://pixabay.com/music/video-games-chiptune-grooving-142242/)
+
+Assets by Quaternius (https://quaternius.com)
+    - Cars (https://quaternius.com/packs/cars.html)
+    - Frog (https://quaternius.com/packs/easyenemy.html
+
+Other Sounds:
+Downloaded on December 9th, 2023s
+     S: Retro Jump 02.wav by MATRIXXX_ -- https://freesound.org/s/458641/ -- License: Creative Commons 0"

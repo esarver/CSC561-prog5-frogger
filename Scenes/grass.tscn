@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cll1d5eihsdtv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0wrmp"]
+size = Vector2(11, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ii8m3"]
+albedo_color = Color(0, 0.360784, 0.141176, 1)
+
+[node name="Grass" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_0wrmp")
+material = SubResource("StandardMaterial3D_ii8m3")

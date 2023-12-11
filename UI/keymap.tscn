@@ -1,0 +1,389 @@
+[gd_scene load_steps=19 format=3 uid="uid://npu3oqtkjq7m"]
+
+[ext_resource type="Script" path="res://UI/keymap.gd" id="1_gmb3g"]
+[ext_resource type="FontFile" uid="uid://bgr10ti7ub44u" path="res://Fonts/Silkscreen/Silkscreen-Regular.ttf" id="1_mkab4"]
+[ext_resource type="LabelSettings" uid="uid://djujfb3c70c6y" path="res://UI/arrow_label_settings.tres" id="3_0g7dx"]
+[ext_resource type="StyleBox" uid="uid://dpkpxmiw4ctaq" path="res://UI/key_background_new.tres" id="3_4mro7"]
+[ext_resource type="LabelSettings" uid="uid://8innuwukej0n" path="res://UI/key_label_settings.tres" id="3_qmde4"]
+
+[sub_resource type="Theme" id="Theme_3vqx7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tm7pd"]
+bg_color = Color(0.145098, 0.145098, 0.145098, 0.905882)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3uox8"]
+font = ExtResource("1_mkab4")
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_srhnl"]
+font = ExtResource("1_mkab4")
+font_size = 18
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0r8iw"]
+
+[sub_resource type="Theme" id="Theme_avdhs"]
+default_font = ExtResource("1_mkab4")
+default_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5suxe"]
+bg_color = Color(0.533333, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0hf6"]
+
+[sub_resource type="SystemFont" id="SystemFont_sgpv6"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_bi8xq"]
+default_font = SubResource("SystemFont_sgpv6")
+
+[sub_resource type="SystemFont" id="SystemFont_rnwbn"]
+font_names = PackedStringArray("Serif")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_34jjd"]
+default_font = SubResource("SystemFont_rnwbn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrma1"]
+
+[node name="Keymap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = 67.0
+offset_right = -69.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmb3g")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3vqx7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tm7pd")
+
+[node name="Other" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -96.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Section" type="Label" parent="Other"]
+layout_mode = 2
+text = "Other"
+label_settings = SubResource("LabelSettings_3uox8")
+horizontal_alignment = 1
+
+[node name="Other" type="GridContainer" parent="Other"]
+layout_mode = 2
+columns = 2
+
+[node name="Bang" type="Panel" parent="Other/Other"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="Other/Other/Bang"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "!"
+label_settings = ExtResource("3_qmde4")
+horizontal_alignment = 1
+
+[node name="Bang Label" type="Label" parent="Other/Other"]
+layout_mode = 2
+text = "Toggle Lights-Out"
+label_settings = SubResource("LabelSettings_3uox8")
+
+[node name="Esc" type="Panel" parent="Other/Other"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="Other/Other/Esc"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 0
+text = "ESC"
+label_settings = SubResource("LabelSettings_srhnl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Esc Label" type="Label" parent="Other/Other"]
+layout_mode = 2
+text = "Return to Main Menu"
+label_settings = SubResource("LabelSettings_3uox8")
+
+[node name="Buffer" type="Panel" parent="Other"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0r8iw")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+offset_right = 19.0
+offset_bottom = 28.0
+theme = SubResource("Theme_avdhs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5suxe")
+text = "X"
+
+[node name="P1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -106.5
+offset_right = 228.0
+offset_bottom = 106.5
+grow_vertical = 2
+
+[node name="Buffer" type="Panel" parent="P1"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t0hf6")
+
+[node name="PlayerOneMovement" type="VBoxContainer" parent="P1"]
+custom_minimum_size = Vector2(200, 130)
+layout_mode = 2
+
+[node name="Section" type="Label" parent="P1/PlayerOneMovement"]
+layout_mode = 2
+text = "Player One
+Movement"
+label_settings = SubResource("LabelSettings_3uox8")
+horizontal_alignment = 1
+
+[node name="W" type="Panel" parent="P1/PlayerOneMovement"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P1/PlayerOneMovement/W"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "W"
+label_settings = ExtResource("3_qmde4")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="P1/PlayerOneMovement"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="A" type="Panel" parent="P1/PlayerOneMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P1/PlayerOneMovement/HBoxContainer/A"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = ExtResource("3_qmde4")
+horizontal_alignment = 1
+
+[node name="S" type="Panel" parent="P1/PlayerOneMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P1/PlayerOneMovement/HBoxContainer/S"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+label_settings = ExtResource("3_qmde4")
+horizontal_alignment = 1
+
+[node name="D" type="Panel" parent="P1/PlayerOneMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P1/PlayerOneMovement/HBoxContainer/D"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+label_settings = ExtResource("3_qmde4")
+horizontal_alignment = 1
+
+[node name="P2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -228.0
+offset_top = -106.5
+offset_bottom = 106.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PlayerTwoMovement" type="VBoxContainer" parent="P2"]
+custom_minimum_size = Vector2(200, 130)
+layout_mode = 2
+
+[node name="Section" type="Label" parent="P2/PlayerTwoMovement"]
+layout_mode = 2
+text = "Player Two
+Movement"
+label_settings = SubResource("LabelSettings_3uox8")
+horizontal_alignment = 1
+
+[node name="Up" type="Panel" parent="P2/PlayerTwoMovement"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P2/PlayerTwoMovement/Up"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bi8xq")
+text = "↑"
+label_settings = ExtResource("3_0g7dx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="P2/PlayerTwoMovement"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Left" type="Panel" parent="P2/PlayerTwoMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P2/PlayerTwoMovement/HBoxContainer/Left"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_34jjd")
+text = "←"
+label_settings = ExtResource("3_0g7dx")
+vertical_alignment = 1
+
+[node name="Down" type="Panel" parent="P2/PlayerTwoMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P2/PlayerTwoMovement/HBoxContainer/Down"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "↓"
+label_settings = ExtResource("3_0g7dx")
+vertical_alignment = 1
+
+[node name="Right" type="Panel" parent="P2/PlayerTwoMovement/HBoxContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("3_4mro7")
+
+[node name="Label" type="Label" parent="P2/PlayerTwoMovement/HBoxContainer/Right"]
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 46.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "→"
+label_settings = ExtResource("3_0g7dx")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Buffer" type="Panel" parent="P2"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xrma1")

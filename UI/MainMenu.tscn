@@ -1,0 +1,144 @@
+[gd_scene load_steps=15 format=3 uid="uid://cigfey5sd07n5"]
+
+[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_fgf4j"]
+[ext_resource type="FontFile" uid="uid://bgr10ti7ub44u" path="res://Fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_7gie5"]
+[ext_resource type="PackedScene" uid="uid://npu3oqtkjq7m" path="res://UI/keymap.tscn" id="3_movar"]
+[ext_resource type="PackedScene" uid="uid://cs408dam6yuv" path="res://UI/Credits.tscn" id="4_a86jf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_liion"]
+font = ExtResource("2_7gie5")
+font_size = 90
+outline_size = 45
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ohtt"]
+font = ExtResource("2_7gie5")
+font_size = 60
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_5spqd"]
+default_font = ExtResource("2_7gie5")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_521gy"]
+bg_color = Color(0.0352941, 0.486275, 0.654902, 1)
+
+[sub_resource type="Theme" id="Theme_ij2kv"]
+default_font = ExtResource("2_7gie5")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl66x"]
+bg_color = Color(0.0352941, 0.486275, 0.654902, 1)
+
+[sub_resource type="Theme" id="Theme_tdf73"]
+default_font = ExtResource("2_7gie5")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue1hr"]
+bg_color = Color(0.0352941, 0.486275, 0.654902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_66t03"]
+font = ExtResource("2_7gie5")
+font_size = 20
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_gcfcm"]
+default_font = ExtResource("2_7gie5")
+default_font_size = 18
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fgf4j")
+
+[node name="TitleContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="TitleContainer"]
+layout_mode = 2
+text = "FROGGER"
+label_settings = SubResource("LabelSettings_liion")
+
+[node name="Subtitle" type="Label" parent="TitleContainer"]
+layout_mode = 2
+text = "A CLONE"
+label_settings = SubResource("LabelSettings_0ohtt")
+horizontal_alignment = 1
+
+[node name="ModeSelection" type="HBoxContainer" parent="TitleContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="OnePlayer" type="Button" parent="TitleContainer/ModeSelection"]
+layout_mode = 2
+theme = SubResource("Theme_5spqd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_521gy")
+text = "ONE PLAYER"
+
+[node name="TwoPlayer" type="Button" parent="TitleContainer/ModeSelection"]
+layout_mode = 2
+theme = SubResource("Theme_ij2kv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nl66x")
+text = "TWO PLAYERS"
+
+[node name="Keymap" type="Button" parent="TitleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_tdf73")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ue1hr")
+text = "CONTROLS"
+
+[node name="Author" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "By: Edwin Sarver  "
+label_settings = SubResource("LabelSettings_66t03")
+
+[node name="Keymap" parent="." instance=ExtResource("3_movar")]
+visible = false
+layout_mode = 1
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -54.0
+offset_right = 117.0
+offset_bottom = -22.0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme = SubResource("Theme_gcfcm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ue1hr")
+text = "Credits"
+
+[node name="Credits" parent="." instance=ExtResource("4_a86jf")]
+visible = false
+layout_mode = 1

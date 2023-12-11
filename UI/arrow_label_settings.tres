@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://djujfb3c70c6y"]
+
+[sub_resource type="SystemFont" id="SystemFont_purpp"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[resource]
+font = SubResource("SystemFont_purpp")
+font_size = 40
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)

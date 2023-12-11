@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpsg2v71rvt3u"]
+
+[ext_resource type="Script" path="res://Scripts/truck.gd" id="1_uqrs3"]
+[ext_resource type="PackedScene" uid="uid://caqybl6kto8ak" path="res://Models/SUV.glb" id="2_d6dam"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhfeq"]
+size = Vector3(1.645, 0.6, 0.5)
+
+[node name="Truck" type="Node3D"]
+script = ExtResource("1_uqrs3")
+_width = 1.645
+
+[node name="SUV2" parent="." instance=ExtResource("2_d6dam")]
+transform = Transform3D(-1.79217e-08, 0, 0.41, 0, 0.41, 0, -0.41, 0, -1.79217e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_hhfeq")

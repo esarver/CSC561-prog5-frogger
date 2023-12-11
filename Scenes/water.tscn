@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtxvs03gwj30q"]
+
+[ext_resource type="Script" path="res://Scripts/water.gd" id="1_hx4iv"]
+[ext_resource type="PackedScene" uid="uid://datpl8rq7uxrb" path="res://Scenes/log.tscn" id="2_2gr2o"]
+[ext_resource type="PackedScene" uid="uid://chclgn0xm7bwg" path="res://Scenes/turtle_group.tscn" id="3_3l4jj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_olfw0"]
+size = Vector2(11, 1)
+subdivide_width = 30
+subdivide_depth = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsg8i"]
+transparency = 1
+albedo_color = Color(0.0705882, 0.113725, 0.462745, 0.917647)
+clearcoat_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewakq"]
+size = Vector3(11, 0.125, 1)
+
+[node name="Water" type="Node3D"]
+script = ExtResource("1_hx4iv")
+velocity_range = 2.0
+chance = 125
+spawnables = Array[PackedScene]([ExtResource("3_3l4jj"), ExtResource("2_2gr2o")])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_olfw0")
+surface_material_override/0 = SubResource("StandardMaterial3D_wsg8i")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ewakq")

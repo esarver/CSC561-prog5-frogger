@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://mm0evdbjxitq"]
+
+[ext_resource type="Texture2D" uid="uid://i5n087hqmtoe" path="res://Textures/Frog.png" id="1_5eb8t"]
+[ext_resource type="Script" path="res://UI/life.gd" id="1_x0yap"]
+
+[node name="Life" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1086.0
+offset_bottom = -582.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_x0yap")
+
+[node name="Frog" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("1_5eb8t")
+stretch_mode = 4

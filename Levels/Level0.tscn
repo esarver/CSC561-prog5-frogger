@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://wljyphfird7e"]
+
+[ext_resource type="Script" path="res://Scripts/Level0.gd" id="1_ej7dt"]
+[ext_resource type="PackedScene" uid="uid://dtxvs03gwj30q" path="res://Scenes/water.tscn" id="1_helnq"]
+[ext_resource type="PackedScene" uid="uid://dq31ovrmuepuk" path="res://Scenes/home_strip.tscn" id="2_2wp5j"]
+[ext_resource type="Environment" uid="uid://bk65ts32sntrl" path="res://Shaders/DefaultEnvironment.tres" id="2_vp0ua"]
+[ext_resource type="PackedScene" uid="uid://btg1m0ufovyko" path="res://Scenes/road.tscn" id="3_rkad6"]
+[ext_resource type="PackedScene" uid="uid://cll1d5eihsdtv" path="res://Scenes/grass.tscn" id="4_57rjw"]
+[ext_resource type="PackedScene" uid="uid://db270ggxmguai" path="res://Scenes/frog.tscn" id="6_wj13i"]
+[ext_resource type="PackedScene" uid="uid://csdxqpywnbvlw" path="res://UI/ui.tscn" id="7_w1ns4"]
+
+[node name="Level0" type="Node3D"]
+script = ExtResource("1_ej7dt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.214041, -0.638619, 0.739157, 0.783276, 0.339927, 0.520508, -0.583666, 0.690374, 0.427456, 6.29941, -138.099, -16.4467)
+light_color = Color(1, 1, 0.929412, 1)
+light_energy = 0.8
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 8, -1)
+environment = ExtResource("2_vp0ua")
+current = true
+fov = 78.4
+far = 15.0
+
+[node name="Player1" parent="." instance=ExtResource("6_wj13i")]
+
+[node name="HomeStrip" parent="." instance=ExtResource("2_2wp5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033, 0, -13)
+
+[node name="Water5" parent="." instance=ExtResource("1_helnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Water4" parent="." instance=ExtResource("1_helnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+
+[node name="Water3" parent="." instance=ExtResource("1_helnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Water2" parent="." instance=ExtResource("1_helnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="Water" parent="." instance=ExtResource("1_helnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Grass2" parent="." instance=ExtResource("4_57rjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Road6" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="Road5" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Road4" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Road3" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Road2" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Road" parent="." instance=ExtResource("3_rkad6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="Grass" parent="." instance=ExtResource("4_57rjw")]
+
+[node name="UI" parent="." instance=ExtResource("7_w1ns4")]

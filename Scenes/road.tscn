@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://btg1m0ufovyko"]
+
+[ext_resource type="Script" path="res://Scripts/road.gd" id="1_nynak"]
+[ext_resource type="PackedScene" uid="uid://bts7jiqwxwoem" path="res://Scenes/car.tscn" id="2_7nnvy"]
+[ext_resource type="PackedScene" uid="uid://dpsg2v71rvt3u" path="res://Scenes/truck.tscn" id="3_uc0nu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_47b8t"]
+size = Vector2(11, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2wgl"]
+albedo_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="Road" type="Node3D"]
+script = ExtResource("1_nynak")
+spawnables = Array[PackedScene]([ExtResource("2_7nnvy"), ExtResource("3_uc0nu")])
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_47b8t")
+material = SubResource("StandardMaterial3D_i2wgl")

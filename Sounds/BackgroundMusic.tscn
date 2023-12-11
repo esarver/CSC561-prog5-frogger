@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxcunvpx2a14q"]
+
+[ext_resource type="AudioStream" uid="uid://rbumn71druct" path="res://Sounds/chiptune-grooving-142242.mp3" id="1_my50e"]
+[ext_resource type="Script" path="res://Sounds/BackgroundMusic.gd" id="2_hitt7"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_my50e")
+autoplay = true
+script = ExtResource("2_hitt7")

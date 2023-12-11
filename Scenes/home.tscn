@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjn3kef0vdnqb"]
+
+[ext_resource type="Script" path="res://Scripts/home.gd" id="1_jtbpd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tnu80"]
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y14ei"]
+albedo_color = Color(0.133333, 0.388235, 0.917647, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf2ww"]
+size = Vector3(1, 0.7, 1)
+
+[node name="Home" type="Node3D"]
+script = ExtResource("1_jtbpd")
+
+[node name="Model" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_tnu80")
+material = SubResource("StandardMaterial3D_y14ei")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_yf2ww")
